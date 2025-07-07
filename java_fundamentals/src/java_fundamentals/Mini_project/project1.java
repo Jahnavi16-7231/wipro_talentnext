@@ -4,54 +4,24 @@ public class project1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 Scanner sc = new Scanner(System.in);
-
-	        System.out.println("Enter number of employees:");
-	        int n = sc.nextInt();
+		    Scanner sc = new Scanner(System.in);
+		    System.out.print("Enter employee ID: ");
+	        int empid = sc.nextInt();
+	        sc.close();
 
 	        // Arrays for storing employee details
-	        int[] empno = new int[n];
-	        String[] ename = new String[n];
-	        String[] dept = new String[n];
-	        char[] desgCode = new char[n];
-	        int[] basic = new int[n];
-	        int[] hra = new int[n];
-	        int[] it = new int[n];
-
-	        for (int i = 0; i < n; i++) {
-	            System.out.println("\nEnter details for employee " + (i + 1) + ":");
-
-	            System.out.println("Emp No:");
-	            empno[i] = sc.nextInt();
-	            sc.nextLine(); // consume newline
-
-	            System.out.println("Emp Name:");
-	            ename[i] = sc.nextLine();
-
-	            System.out.println("Department:");
-	            dept[i] = sc.nextLine();
-
-	            System.out.println("Designation Code (e/c/k/r/m):");
-	            desgCode[i] = sc.next().charAt(0);
-
-	            System.out.println("Basic Salary:");
-	            basic[i] = sc.nextInt();
-
-	            System.out.println("HRA:");
-	            hra[i] = sc.nextInt();
-
-	            System.out.println("IT:");
-	            it[i] = sc.nextInt();
-	        }
-
-	        System.out.println("\nEnter empid to search:");
-	        int searchId = sc.nextInt();
-	        sc.close();
+	        int[] empno = {1001, 1002, 1003, 1004, 1005};
+	        String[] ename = {"Ashish", "Sushma", "Rahul", "Chahat", "Ranjan"};
+	        String[] dept = {"ECE", "IT", "Acct", "HR", "Finance"};
+	        char[] desgCode = {'e', 'c', 'k', 'r', 'm'};
+	        int[] basic = {20000, 23000, 15000, 27000, 30000};  
+	        int[] hra = {8000, 9000, 10000, 12000, 15000};
+	        int[] it = {3000, 4000, 3000, 4500, 5000};
 
 	        boolean found = false;
 
-	        for (int i = 0; i < n; i++) {
-	            if (empno[i] == searchId) {
+	        for (int i = 0; i < empno.length; i++) {
+	            if (empno[i] == empid) {
 	                found = true;
 	                int da = 0;
 	                String desg = "";
@@ -92,7 +62,7 @@ public class project1 {
 	        }
 
 	        if (!found) {
-	            System.out.println("There is no employee with empid: " + searchId);
+	            System.out.println("There is no employee with empid: " + empid);
 	        }
   }
 }
