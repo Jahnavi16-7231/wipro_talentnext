@@ -3,6 +3,7 @@ package IO_Streams;
 import java.io.*;
 import java.util.*;
 
+@SuppressWarnings("serial")
 class Employee2 implements Serializable {
     private int id;
     private String name;
@@ -89,7 +90,8 @@ public class Mini_project {
         }
     }
 
-    private static List<Employee2> loadEmployees() {
+    @SuppressWarnings("unchecked")
+	private static List<Employee2> loadEmployees() {
         File file = new File(FILE_NAME);
         if (!file.exists()) return new ArrayList<>();
 

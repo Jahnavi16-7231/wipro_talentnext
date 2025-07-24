@@ -1,1 +1,0 @@
-This is a sample file with several occurrences of the letter R and r.
